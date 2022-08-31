@@ -1,8 +1,8 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import logo from '../logoPrototype.png';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import logo from '../logoPrototype.png';
 
 function Navigation() {
   return (
@@ -14,7 +14,7 @@ function Navigation() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           
-          <Nav className="me-auto">
+          <Nav className="ms-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/listings">
               {/* Will Style the below component when have time*/}
