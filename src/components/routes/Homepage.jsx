@@ -1,9 +1,9 @@
-import Navigation from '../Navigation';
+import Header from "../Header";
 
 function Homepage() {
     return(
         <>
-            <Navigation />
+            <Header />
         </>
     );
 }
