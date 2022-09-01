@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
+import MovieList from "./components/routes/MovieList";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  const [movies, setMovies] = useState([]);
+  //const [searchInput, setSearchInput] = useState('');
+
+const getMovieRequest = async() => {
+  const url = "https://imdb-api.com/en/API/InTheaters/k_3tlo06yz"
+
+  const response = await fetch(url);
+  const responseJson = await response.json();
+
+  setMovies(responseJson.items);
 }
 
+useEffect(() => {
+  getMovieRequest();
+},[]);
+
+  return (
+  <div className="movie-container"> 
+      <MovieList movies={movies}/>
+  </div>
+  );
+};
 export default App;
