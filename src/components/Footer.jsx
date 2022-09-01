@@ -13,7 +13,7 @@ function Footer() {
                 </li>
             </ul>
             <p className="text-center text-muted">&copy; QA Cinemas</p>
-      </footer>
+        </footer>
     );
 }
 
