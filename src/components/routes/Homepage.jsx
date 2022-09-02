@@ -1,5 +1,5 @@
-import Header from "../Header";
-import Footer from '../Footer';
+import Header from "../Navigation/Header";
+import Footer from '../Navigation/Footer';
 
 function Homepage() {
     return (
