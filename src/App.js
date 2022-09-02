@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Bookings from './components/routes/TicketBooking/Booking';
+import Bookings from './components/BookingForm';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
