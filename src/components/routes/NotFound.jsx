@@ -1,6 +1,14 @@
+import Header from "../Navigation/Header";
+import Footer from '../Navigation/Footer';
+
 function NotFound() {
   return (
-    <h1>404 NOT FOUND!</h1>
+    <>
+      <Header />
+      <h1>404 NOT FOUND!</h1>
+      <Footer />
+    </>
+    
   );
 }
 
