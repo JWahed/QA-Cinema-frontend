@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Container } from "reactstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { addDays } from "date-fns";
 import DatePicker from "react-datepicker";
@@ -7,6 +6,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const BookingDetails = () => {
+  
   const placeholder = [
     { id: 0, title: "heading", showtimes: ["Please select a film"] },
     {
@@ -144,7 +144,7 @@ const BookingDetails = () => {
   };
 
   return (
-    <div>
+    <div onSubmit={submitForm}>
       <h2>Book a Ticket</h2>
       <select
         id="Booking"
@@ -200,7 +200,7 @@ const BookingDetails = () => {
       <br />
       <Link to={{ pathname: `/screens` }} target="_blank">
         <button id="screenButton" type="button">
-          Please click for sceen info{" "}
+          Please click for screen info{" "}
         </button>
       </Link>
       <br />
@@ -246,11 +246,9 @@ const BookingDetails = () => {
         onChange={bookerName}
       ></input>
       <br />
-      <Link to={{ pathname: `/checkout` }} target="_blank">
         <button id="submitButtonStripe" type="submit">
           Submit and Pay: £{totalPrice}
         </button>
-      </Link>
     </div>
   );
 };
