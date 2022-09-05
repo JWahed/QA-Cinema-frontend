@@ -1,0 +1,42 @@
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+  
+.search-container {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+}
+  
+.dropdown {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+}
+  
+.dropdown:empty {
+    border: none;
+}
+  
+.dropdown-row {
+    cursor: pointer;
+    text-align: start;
+    margin: 2px 0;
+}
+  
+input {
+    width: 220px;
+}
+  
+.search-inner {
+    display: flex;
+}
+
+a, a:hover, a:visited, a:active {
+    display: flex;
+    color: inherit;
+    text-decoration: none;
+}
