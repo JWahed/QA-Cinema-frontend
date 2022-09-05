@@ -12,12 +12,12 @@ function SearchBar() {
   };
   
   const findMovie = async (term) => {
-    // Reject only whitespace string
+    // Reject string with only whitespaces
     if (/^\s*$/.test(term)) {
         return
     }
-    // Removes excessive whitespace
-    term = term.trim().replace(/\s+/, ' ');
+    // Removes excessive whitespace 
+    term = term.trim().replace(/\s+/g, ' ');
     setSearchTerm(term);
     try {
         const res = await axios.get(`http://www.omdbapi.com/?apikey=dd7f33e1&s=${term}`);
