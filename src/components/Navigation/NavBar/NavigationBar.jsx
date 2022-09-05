@@ -29,6 +29,7 @@ function NavigationBar() {
                 <span style={{color: "rgba(0,64,80,100)"}}>N</span>
               </span>
             </Nav.Link>
+            <Nav.Link href="/bookings">Bookings</Nav.Link>
             <Nav.Link href="/new-releases">New releases</Nav.Link>
             <Nav.Link href="/discussion-board">Discussion board</Nav.Link>
             <NavDropdown title="Information" id="basic-nav-dropdown">
