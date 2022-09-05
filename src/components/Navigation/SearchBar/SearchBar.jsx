@@ -12,9 +12,9 @@ function SearchBar() {
   };
   
   const findMovie = async (term) => {
-    // Reject string with only whitespaces
-    if (/^\s*$/.test(term)) {
-        return
+    // Reject falsy and string with only whitespaces
+    if (!term || /^\s*$/.test(term)) {
+        return console.log("ejected");
     }
     // Removes excessive whitespace 
     term = term.trim().replace(/\s+/g, ' ');
@@ -28,7 +28,7 @@ function SearchBar() {
         setData(result);
     } catch (err) {
         console.error(err);
-        window.alert("Sorry invalid query");
+        window.alert("Invalid query \nCheck console for error");
     }
   };
 
