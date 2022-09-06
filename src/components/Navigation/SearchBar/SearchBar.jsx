@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ReactComponent as MagGlass } from '../../../magnifyingGlass.svg';
+import { ReactComponent as MagGlass } from '../../../assets/magnifyingGlass.svg';
 import axios from 'axios';
 import './SearchBar.css';
 
