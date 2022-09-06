@@ -27,7 +27,6 @@ function SearchBar() {
         }
         setData(result);
     } catch (err) {
-        console.error(err);
         window.alert("Invalid query \nCheck console for error");
     }
   };
