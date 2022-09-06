@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Bookings from './components/BookingForm';
+import BookingsPage from './components/BookingPage';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
            </div>
         </nav>
         <Routes>
-          <Route path="/Booking" element={<Bookings/>} />
+          <Route path="/Booking" element={<BookingsPage/>} />
 
         </Routes>
       </BrowserRouter>
