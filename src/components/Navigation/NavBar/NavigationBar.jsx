@@ -2,10 +2,13 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import LoginButton from '../../Authentication/LoginButton';
+import LogoutButton from '../../Authentication/LogoutButton';
 import logo from '../../../assets/logoPrototype.png';
 import './NavigationBar.css';
 
 function NavigationBar() {
+
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -32,6 +35,10 @@ function NavigationBar() {
             <Nav.Link href="/bookings">Bookings</Nav.Link>
             <Nav.Link href="/new-releases">New releases</Nav.Link>
             <Nav.Link href="/discussion-board">Discussion board</Nav.Link>
+            <Nav.Link>
+              <LoginButton />
+              <LogoutButton />
+            </Nav.Link>
             <NavDropdown title="Information" id="basic-nav-dropdown">
               <NavDropdown.Item href="/opening-times">Opening hours</NavDropdown.Item>
               <NavDropdown.Item href="/getting-here">Getting here</NavDropdown.Item>
