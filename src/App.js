@@ -1,13 +1,15 @@
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Homepage from "./components/routes/Homepage";
-import NotFound from "./components/routes/NotFound";
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Homepage from './components/routes/Homepage'
+import NotFound from './components/routes/NotFound'
+import ScreensPage from './components/pages/ScreenPage';
+import ClassificationPage from './components/routes/ClassificationPage';
+import Attractions from './components/routes/Attractions'
 import ProfilePage from "./components/routes/ProfilePage";
 import BookingsPage from './components/routes/BookingsPage';
 import Checkout from "./components/routes/CheckoutPage";
-
 
 import { Auth0Provider } from '@auth0/auth0-react';
 import PropTypes from 'prop-types';
@@ -36,14 +38,18 @@ function App({ authDomainURL, authClientID, stripeKey }) {
             <Route path="/checkout" element={<Checkout stripeKey={stripeKey}/>} />
             <Route path="/bookings/failed" element={<BookingsPage/>} />
             <Route path="/bookings/success" element={<BookingsPage/>} />
+            <Route path='/Attractions' element={<Attractions />} />
+            <Route path="/screens" element={<ScreensPage/>} />
+            <Route path="/Classification" element={<ClassificationPage/>} />
 
           </Routes>
         </BrowserRouter>
-
       </Auth0Provider>
+
     </div>
-  );
+  )
 }
+
 
 App.propTypes = {
   authDomainURL: PropTypes.string.isRequired,
@@ -52,3 +58,4 @@ App.propTypes = {
 }
 
 export default App;
+
