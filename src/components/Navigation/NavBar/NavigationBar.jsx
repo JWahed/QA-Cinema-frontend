@@ -35,7 +35,8 @@ function NavigationBar() {
             <NavDropdown title="Information" id="basic-nav-dropdown">
               <NavDropdown.Item href="/opening-times">Opening hours</NavDropdown.Item>
               <NavDropdown.Item href="/getting-here">Getting here</NavDropdown.Item>
-              <NavDropdown.Item href="/classifications">Film Classifications</NavDropdown.Item>
+              <NavDropdown.Item href="/classification">Film Classifications</NavDropdown.Item>
+              <NavDropdown.Item href="/screens">Screens</NavDropdown.Item>
               <NavDropdown.Item href="/about">About</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/contact-us">Contact Us</NavDropdown.Item>

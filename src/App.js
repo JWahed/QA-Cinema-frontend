@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Homepage from './components/routes/Homepage'
 import NotFound from './components/routes/NotFound'
-import ScreensPage from './components/pages/ScreenPage';
+import ScreensPage from './components/routes/ScreenPage';
 import ClassificationPage from './components/routes/ClassificationPage';
 import Attractions from './components/routes/Attractions'
 
