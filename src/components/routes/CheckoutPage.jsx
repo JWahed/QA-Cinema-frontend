@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import Footer from '../Navigation/Footer/Footer';
 import Header from '../Navigation/Header/Header';
 
-function Checkout( {stripeKey} ) {
+function Checkout( {stripeKey } ) {
 
-    const  [adultQuantity, setAdultQuantity] = useState(0);
-    const  [childQuantity, setChildQuantity] = useState(0);
-    const  [concessionQuantity, setConcessionQuantity] = useState(0);
+    // const  [adultQuantity, setAdultQuantity] = useState(0);
+    // const  [childQuantity, setChildQuantity] = useState(0);
+    // const  [concessionQuantity, setConcessionQuantity] = useState(0);
 
     let stripePromise;
     const getStripe = () => {
@@ -21,13 +21,21 @@ function Checkout( {stripeKey} ) {
     const [stripeError, setStripeError] = useState(null);
     const [isLoading, setLoading] = useState(false);
 
-    const item = {
+    const adultTicket = {
         price: "price_1LfIZYKyk0jJqLbQIJcL56jM",
         quantity: 10
-    }
+    };
+    const concessionTicket = {
+        price: "price_1LfIaTKyk0jJqLbQb8DulFis",
+        quantity: 2
+    };
+    const childTicket = {
+        price: "price_1LfIa6Kyk0jJqLbQKvNtmTZk",
+        quantity: 3
+    };
 
     const checkoutOptions = {
-        lineItems: [item],
+        lineItems: [adultTicket, concessionTicket, childTicket],
         mode: "payment",
         successUrl: `${window.location.origin}/success`,
         cancelUrl: `${window.location.origin}/cancel`
@@ -53,9 +61,9 @@ function Checkout( {stripeKey} ) {
                     <h1>Stripe Checkout</h1>
                         <p className="checkout-title">Booking price</p>
                         <p className="checkout-description">
-                        
+                            Cinema Tickets
                         </p>
-                    <h1 className="checkout-price">£10.75</h1>
+                    <h1 className="checkout-price"></h1>
                     {/* <img
                         className="checkout-product-image"
                         src={ProductImage}
