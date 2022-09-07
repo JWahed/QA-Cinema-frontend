@@ -20,7 +20,11 @@ function Loader() {
     }, []);
 
     return(
-        <App authDomainURL={keys.authDomainURL} authClientID={keys.authClientID} />
+        <App
+          authDomainURL={keys.authDomainURL}
+          authClientID={keys.authClientID}
+          stripeKey={keys.stripeDevKey}
+        />
     );
 }
 
