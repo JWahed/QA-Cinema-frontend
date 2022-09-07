@@ -1,10 +1,16 @@
 import './App.css';
-import Screens from './pages/Screens';
+import ScreensPage from './components/pages/ScreenPage';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <div className="App">
-      <Screens/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/screens" element={<ScreensPage/>} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
