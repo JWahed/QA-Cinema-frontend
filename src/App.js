@@ -1,6 +1,6 @@
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Classification from './pages/Classification';
+import ClassificationPage from './components/routes/ClassificationPage';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/Classification" element={<Classification/>} />
+          <Route path="/Classification" element={<ClassificationPage/>} />
         </Routes>
       </BrowserRouter>
     </div>
