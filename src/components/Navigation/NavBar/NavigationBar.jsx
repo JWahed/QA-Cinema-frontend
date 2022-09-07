@@ -16,7 +16,7 @@ function NavigationBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/listings">
+            <Nav.Link href="/CurrentMovieList">
               {/* Will Style the below component when have time*/}
               <span>
                 <span style={{color: "rgba(0,64,80,100)"}}>W</span>
@@ -30,7 +30,7 @@ function NavigationBar() {
               </span>
             </Nav.Link>
             <Nav.Link href="/bookings">Bookings</Nav.Link>
-            <Nav.Link href="/new-releases">New releases</Nav.Link>
+            <Nav.Link href="/NewReleaseList">New releases</Nav.Link>
             <Nav.Link href="/discussion-board">Discussion board</Nav.Link>
             <NavDropdown title="Information" id="basic-nav-dropdown">
               <NavDropdown.Item href="/opening-times">Opening hours</NavDropdown.Item>
