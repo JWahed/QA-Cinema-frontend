@@ -46,12 +46,12 @@ const BookingPageRefactor = () => {
       <h4> Book Tickets Here</h4>
       <br />
       <form
-        className="Form"
+        className="booking-form"
         onSubmit={(e) => {
           onSubmitBooking(e);
         }}
       >
-        <div className='body'>
+        <div className='booking-form-body'>
         <label for="movieTitle" class="form-label">
           Movie:
         </label>

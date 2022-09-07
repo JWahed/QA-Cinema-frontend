@@ -1,7 +1,7 @@
-body {
+.booking-form-body {
     text-align: center;
 }
-form {
+.booking-form {
     display: inline-block;
     border: 2em black;
 }
