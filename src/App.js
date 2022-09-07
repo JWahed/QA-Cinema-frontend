@@ -5,11 +5,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Homepage from "./components/routes/Homepage";
 import NotFound from "./components/routes/NotFound";
 import BookingsPage from './components/bookings/Booking';
+import Checkout from "./components/routes/CheckoutPage";
+
 
 import { Auth0Provider } from '@auth0/auth0-react';
 import PropTypes from 'prop-types';
 
-function App({ authDomainURL, authClientID }) {
+function App({ authDomainURL, authClientID, stripeKey }) {
   
   if (!authDomainURL || !authClientID) {
     return (
@@ -29,6 +31,7 @@ function App({ authDomainURL, authClientID }) {
             <Route path="/" element={<Homepage />} />
             <Route path="/*" element={<NotFound />} />
             <Route path="/Booking" element={<BookingsPage/>} />
+            <Route path="/checkout" element={<Checkout stripeKey={stripeKey}/>} />
           </Routes>
         </BrowserRouter>
 
@@ -39,7 +42,8 @@ function App({ authDomainURL, authClientID }) {
 
 App.propTypes = {
   authDomainURL: PropTypes.string.isRequired,
-  authClientID: PropTypes.string.isRequired
+  authClientID: PropTypes.string.isRequired,
+  stripeKey: PropTypes.string.isRequired
 }
 
 export default App;
