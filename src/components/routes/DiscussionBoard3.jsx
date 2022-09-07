@@ -6,8 +6,11 @@ import {
 } from "react-router-dom";
 import NavBar from "./NavBar";
 import Create from "./create";
+import CreateComment from "./createComment";
 import Discussion from './topicDetails';
-import NotFound from './NotFound';
+//import Comments from "./Comment/Comments";
+import CommentDetails from "./commentDetails";
+//import NotFound from './NotFound';
 //import Comments from './Comments;'
 
 function DiscussionBoard3() {
@@ -22,8 +25,12 @@ function DiscussionBoard3() {
 
           <Route exact path="/" element={<Board5 />} />
             <Route path="/create" element={<Create />} />
+            <Route path="/createComment" element={<CreateComment />} />
             <Route path="/discussion/:id" element={<Discussion />} />
-            <Route exact path="/NavBar" element={<NavBar />} />
+            {/*<Route path="/comments/:id" element={<Comments />} />*/}
+            <Route path="/commentDetails" element={<CommentDetails />} />
+            <Route path="/NavBar" element={<NavBar />} />
+
             {/*<Route path="/Comments" element={<Comments />} />*/}
 
 

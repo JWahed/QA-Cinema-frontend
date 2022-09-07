@@ -12,12 +12,6 @@ const useFetch = (url) => {
 
     setTimeout(() => {
       fetch(url, { signal: abortCont.signal })
-     // fetch(url, {
-  //headers: {
-    //'Content-Type': 'application/json',
-   // 'Accept': 'application/json'
- // },
-//})
       .then(res => {
         if (!res.ok) { // error coming back from server
           throw Error('could not fetch the data for that resource');

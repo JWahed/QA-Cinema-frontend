@@ -11,8 +11,10 @@ const BoardDetails5 = ({topics}) => {
       {topics.map(discussion => (
         <div className="topic-preview" key={discussion._id} >
           <Link to={`/discussion/${discussion._id}`}>
-          <h2>{ discussion.title }</h2>
+      
+          <h2>{ discussion.topic }</h2>
           <p>Topic Started by { discussion.topicAuthor }</p>
+          <br />
           </Link>
         </div>
       ))}
