@@ -41,15 +41,24 @@
     margin-top: 15px;
 }
 
-.box .row h2{
+.row h2{
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
     font-size: 50px;
 }
 
-.box .row span{
+.row span{
     font-size: 20px;
     padding: 10px 0;
-    color: black;
+    color: whitesmoke;
+}
+
+.box{
+    font-size: 20px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 50px;
 }
