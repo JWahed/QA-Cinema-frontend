@@ -32,6 +32,9 @@ function App({ authDomainURL, authClientID, stripeKey }) {
             <Route path="/*" element={<NotFound />} />
             <Route path="/bookings" element={<BookingsPage/>} />
             <Route path="/checkout" element={<Checkout stripeKey={stripeKey}/>} />
+            <Route path="/bookings/failed" element={<BookingsPage/>} />
+            <Route path="/bookings/success" element={<BookingsPage/>} />
+
           </Routes>
         </BrowserRouter>
 
