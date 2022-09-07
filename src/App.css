@@ -36,3 +36,6 @@
     transform: rotate(360deg);
   }
 }
+
+
+@import './styles//bookingPage.css'
