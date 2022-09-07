@@ -6,8 +6,11 @@ import LoginButton from '../../Authentication/LoginButton';
 import LogoutButton from '../../Authentication/LogoutButton';
 import logo from '../../../assets/logoPrototype.png';
 import './NavigationBar.css';
+import { useAuth0 } from '@auth0/auth0-react';
 
 function NavigationBar() {
+
+  const { isAuthenticated } = useAuth0();
 
   return (
     <Navbar bg="light" expand="lg">
@@ -35,6 +38,7 @@ function NavigationBar() {
             <Nav.Link href="/bookings">Bookings</Nav.Link>
             <Nav.Link href="/new-releases">New releases</Nav.Link>
             <Nav.Link href="/discussion-board">Discussion board</Nav.Link>
+            {isAuthenticated && <Nav.Link href="/profile">Profile</Nav.Link>}
             <Nav.Link>
               <LoginButton />
               <LogoutButton />
