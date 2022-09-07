@@ -1,0 +1,16 @@
+.Standard {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Deluxe {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.screens-img {
+    width: 100%;
+    height: 280px;
+}
