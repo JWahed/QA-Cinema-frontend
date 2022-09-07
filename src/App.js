@@ -1,18 +1,27 @@
-import './App.css';
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Homepage from './components/routes/Homepage'
+import NotFound from './components/routes/NotFound'
 import ScreensPage from './components/pages/ScreenPage';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+import ClassificationPage from './components/routes/ClassificationPage';
+import Attractions from './components/routes/Attractions'
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <BrowserRouter>
         <Routes>
+          <Route path='/' element={<Homepage />} />
+          <Route path='/*' element={<NotFound />} />
+          <Route path='/Attractions' element={<Attractions />} />
           <Route path="/screens" element={<ScreensPage/>} />
+          <Route path="/Classification" element={<ClassificationPage/>} />
         </Routes>
       </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
