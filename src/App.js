@@ -8,6 +8,8 @@ import Attractions from './components/routes/Attractions'
 import MovieRequest from './components/routes/CurrentMovieList'
 import MovieDetails from './components/routes/MovieDetails'
 import NewReleaseMovieRequest from './components/routes/NewReleaseList'
+import ScreensPage from './components/routes/ScreenPage'
+import ClassificationPage from './components/routes/ClassificationPage'
 
 function App() {
   return (

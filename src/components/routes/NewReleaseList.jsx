@@ -42,7 +42,7 @@ useEffect(() => {
         movie.dateReleased.includes("Aug") || 
         movie.dateReleased.includes("Sep")))
         .map((movie) => (
-            <Link to={`/NewReleaseList/${movie._id}`}>            
+            <Link to={`/NewReleaseList/${movie._id}`} key={movie._id}>            
                 <div className="movie">
                     
                     <img src={movie.poster} alt='movie'/>

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import PropTypes from "prop-types";
 
 function Filter({setActiveGenre, activeGenre, setFiltered, movies}){
 
@@ -30,5 +31,10 @@ function Filter({setActiveGenre, activeGenre, setFiltered, movies}){
         </div>
     )
 }
-
+Filter.propTypes={
+    setActiveGenre: PropTypes.string.isRequired,
+    activeGenre: PropTypes.string.isRequired,
+    setFiltered: PropTypes.string.isRequired,
+    movies: PropTypes.array.isRequired,
+}
 export default Filter;
