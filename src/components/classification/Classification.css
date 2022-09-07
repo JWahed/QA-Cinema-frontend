@@ -1,3 +1,15 @@
-img{
+img {
   width: 50px;  
 }
+
+#classification-page {
+  border: solid gray 1px;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+}
+
+#classification-introduction {
+  display: flex;
+}
+
