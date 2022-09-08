@@ -1,9 +1,10 @@
 import { CssBaseline, Grid } from '@material-ui/core'
 import { useState, useEffect } from 'react'
-
 import { getPlacesData } from '../../tomsAPI'
 
-// import Header from '../attractionsComponents/Header/Header'
+import Header from '../Navigation/Header/Header'
+import Footer from '../Navigation/Footer/Footer'
+
 import List from '../attractionsComponents/List/List'
 import Map from '../attractionsComponents/Map/Map'
 
@@ -17,6 +18,8 @@ const Attractions = () => {
   const [coordinates, setCoordinates] = useState({
     lat: 51.50848260005737,
     lng: -0.07388982749155347,
+    // lat: 0,
+    // lng: 0,
   })
 
   // set google maps window boundries
@@ -36,18 +39,17 @@ const Attractions = () => {
     setIsLoading(true)
     console.log(coordinates, bounds)
     getPlacesData(type, bounds.sw, bounds.ne).then((data) => {
-      console.log(data)
+      // console.log(data)
       setPlaces(data)
       setfilteredPlaces([])
       setIsLoading(false)
     })
-    // rerun the code everytime the map changes
   }, [type, coordinates, bounds])
 
   return (
     <>
       <CssBaseline />
-      {/* <Header /> */}
+      <Header />
       <Grid container spacing={3} style={{ width: '100%' }}>
         <Grid item xs={12} md={4}>
           <List
@@ -70,6 +72,7 @@ const Attractions = () => {
           />
         </Grid>
       </Grid>
+      <Footer />
     </>
   )
 }

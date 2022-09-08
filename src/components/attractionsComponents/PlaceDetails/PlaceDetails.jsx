@@ -97,6 +97,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
           <Button
             size='small'
             color='primary'
+            className='btn'
             onClick={() => window.open(place.website, '_blank')}
           >
             Website
