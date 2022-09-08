@@ -14,13 +14,12 @@ import MovieDetails from "./components/routes/MovieDetails";
 import NewReleaseMovieRequest from "./components/routes/NewReleaseList";
 import ScreensPage from "./components/routes/ScreenPage";
 import ClassificationPage from "./components/routes/ClassificationPage";
+import Contact from "./components/routes/Contact";
 
 import { Auth0Provider } from "@auth0/auth0-react";
 import PropTypes from "prop-types";
 
-
 function App({ authDomainURL, authClientID, stripeKey }) {
-  
   if (!authDomainURL || !authClientID || !stripeKey) {
     return (
       <div className="App-load">
@@ -41,24 +40,24 @@ function App({ authDomainURL, authClientID, stripeKey }) {
             <Route path="/" element={<Homepage />} />
             <Route path="/*" element={<NotFound />} />
             <Route path="/Attractions" element={<Attractions />} />
-            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/Profile" element={<ProfilePage />} />
             <Route path="/bookings" element={<BookingsPage />} />
             <Route
               path="/checkout/:fullTitle/:date/:movieTime/:seats/:ticketType/:bookerName"
               element={<Checkout stripeKey={stripeKey} />}
             />
-            <Route path="/Failed" element={<FailedPaymentPage />}/>
-            <Route path="/Bookings/failed" element={<BookingsPage />} />
-            <Route path="/Bookings/success" element={<BookingsPage />} />
+            <Route path="/Success" element={<FailedPaymentPage />} />
+            <Route path="/Failed" element={<FailedPaymentPage />} />
             <Route path="/CurrentMovieList" element={<MovieRequest />} />
             <Route path="/CurrentMovieList/:_id" element={<MovieDetails />} />
+            <Route path="/NewReleaseList/:_id" element={<MovieDetails />} />
             <Route
               path="/NewReleaseList"
               element={<NewReleaseMovieRequest />}
             />
-            <Route path="/NewReleaseList/:_id" element={<MovieDetails />} />
             <Route path="/Screens" element={<ScreensPage />} />
             <Route path="/Classification" element={<ClassificationPage />} />
+            <Route path="/Contact" element={<Contact />} />
           </Routes>
         </BrowserRouter>
       </Auth0Provider>
