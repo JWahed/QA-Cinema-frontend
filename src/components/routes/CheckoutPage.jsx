@@ -7,6 +7,9 @@ import Header from '../Navigation/Header/Header';
 
 function Checkout({ stripeKey }) {
 
+    const [stripeError, setStripeError] = useState(null);
+    const [isLoading, setLoading] = useState(false);
+
     const {
         fullTitle,
         date,
@@ -24,12 +27,9 @@ function Checkout({ stripeKey }) {
         return stripePromise;
     };
 
-    const [stripeError, setStripeError] = useState(null);
-    const [isLoading, setLoading] = useState(false);
-
-    const adultTicket = "price_1LfIZYKyk0jJqLbQIJcL56jM";
-    const concessionTicket = "price_1LfIaTKyk0jJqLbQb8DulFis";
-    const childTicket = "price_1LfIa6Kyk0jJqLbQKvNtmTZk";
+    const adultTicket = "price_1LflvHKyk0jJqLbQa6FCISzP";
+    const concessionTicket = "price_1LflwFKyk0jJqLbQ4miH7Py3";
+    const childTicket = "price_1LflvoKyk0jJqLbQ3PuPdhSj";
 
     const checkTicket = (ticketType) => {
         switch(ticketType) {
@@ -45,8 +45,8 @@ function Checkout({ stripeKey }) {
     const checkoutOptions = {
         lineItems: [checkTicket(ticketType)],
         mode: "payment",
-        successUrl: "/success",
-        cancelUrl: "/cancel"
+        successUrl: `${window.location.origin}/success`,
+        cancelUrl: `${window.location.origin}/cancel`
     };
 
     const redirectToCheckout = async () => {
@@ -59,7 +59,9 @@ function Checkout({ stripeKey }) {
             setStripeError(error.message);
             setLoading(false);
         }
-        if (stripeError) alert(stripeError);
+        if (stripeError) {
+            alert(stripeError);
+        }
     };
 
     return (

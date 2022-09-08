@@ -46,6 +46,7 @@ const Booking = () => {
       <br />
       <form
         className="BookingForm"
+        onSubmit={(e) => onSubmitBooking(e)}
       >
         <div className='body'>
         <label htmlFor="movieTitle" className="form-label">
@@ -172,7 +173,7 @@ const Booking = () => {
         
         <button type="submit" className="btn btn-primary bookingBtn">
           {isLoading && <i className='fas fa-spinner fa-pulse' />}
-          <Link onClick={(e) => onSubmitBooking(e.target.value)} to={`/checkout/${title}/${date}/${time}/${seats}/${ticketType}/${name}`}>
+          <Link to={`/checkout/${title}/${date}/${time}/${seats}/${ticketType}/${name}`}>
           {!isLoading && 'Book Tickets!'}
           </Link>
         </button>

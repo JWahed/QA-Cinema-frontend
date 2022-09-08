@@ -24,6 +24,7 @@ function Loader() {
           authDomainURL={keys.authDomainURL}
           authClientID={keys.authClientID}
           stripeKey={keys.stripeDevKey}
+          rapidApiKey={keys.rapidApiKey}
         />
     );
 }
