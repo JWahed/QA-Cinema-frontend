@@ -45,8 +45,8 @@ function Checkout({ stripeKey }) {
     const checkoutOptions = {
         lineItems: [checkTicket(ticketType)],
         mode: "payment",
-        successUrl: `${window.location.origin}/success`,
-        cancelUrl: `${window.location.origin}/cancel`
+        successUrl: "/success",
+        cancelUrl: "/cancel"
     };
 
     const redirectToCheckout = async () => {

@@ -46,9 +46,6 @@ const Booking = () => {
       <br />
       <form
         className="BookingForm"
-        onSubmit={(e) => {
-          onSubmitBooking(e);
-        }}
       >
         <div className='body'>
         <label htmlFor="movieTitle" className="form-label">
@@ -83,25 +80,25 @@ const Booking = () => {
         >
           <option value={date}>Select a Date</option>
           <option  onChange={(e) => setSelectedDate(e.target.value)}>
-            10/09/2022
+            10-09-2022
           </option>
           <option onChange={(e) => setSelectedDate(e.target.value)}>
-            11/09/2022
+            11-09-2022
           </option>
           <option onChange={(e) => setSelectedDate(e.target.value)}>
-            12/09/2022
+            12-09-2022
           </option>
           <option onChange={(e) => setSelectedDate(e.target.value)}>
-            13/09/2022
+            13-09-2022
           </option>
           <option onChange={(e) => setSelectedDate(e.target.value)}>
-            14/09/2022
+            14-09-2022
           </option>
           <option onChange={(e) => setSelectedDate(e.target.value)}>
-            15/09/2022
+            15-09-2022
           </option>
           <option onChange={(e) => setSelectedDate(e.target.value)}>
-            16/09/2022
+            16-09-2022
           </option>
           ))
         </select>
@@ -175,10 +172,9 @@ const Booking = () => {
         
         <button type="submit" className="btn btn-primary bookingBtn">
           {isLoading && <i className='fas fa-spinner fa-pulse' />}
-          <Link to={`/checkout/${title}/${date}/${time}/${seats}/${ticketType}/${name}`}>
+          <Link onClick={(e) => onSubmitBooking(e.target.value)} to={`/checkout/${title}/${date}/${time}/${seats}/${ticketType}/${name}`}>
           {!isLoading && 'Book Tickets!'}
           </Link>
-
         </button>
         </div>
       </form>

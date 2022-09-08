@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import LoginButton from '../../Authentication/LoginButton';
 import LogoutButton from '../../Authentication/LogoutButton';
-import logo from '../../../assets/logoPrototype.png';
+import logo from '../../../assets/logo.png';
 import './NavigationBar.css';
 import { useAuth0 } from '@auth0/auth0-react';
 
