@@ -83,13 +83,13 @@ const Booking = () => {
         >
           <option value={date}>Select a Date</option>
           <option  onChange={(e) => setSelectedDate(e.target.value)}>
-            10-09-2022
+            10/09/2022
           </option>
           <option onChange={(e) => setSelectedDate(e.target.value)}>
-            11-09-2022
+            11/09/2022
           </option>
           <option onChange={(e) => setSelectedDate(e.target.value)}>
-            12-09-2022
+            12/09/2022
           </option>
           <option onChange={(e) => setSelectedDate(e.target.value)}>
             13/09/2022
