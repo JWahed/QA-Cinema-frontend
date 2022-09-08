@@ -60,7 +60,7 @@ function SearchBar() {
                 key={movie.fullTitle}
               >
                 <a href={`/movies/${movie._id}`}>
-                    {movie.fullTitle}&nbsp;({movie.Year})
+                    {movie.fullTitle}
                 </a>
               </div>
             ))}
