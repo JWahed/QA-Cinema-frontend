@@ -1,0 +1,10 @@
+.carousel-img {
+    justify-content: center;
+    
+    width: 200vh;
+    height: 75vh;
+}
+
+.caption-text {
+    color: whitesmoke;
+}
