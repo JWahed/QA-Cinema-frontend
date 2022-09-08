@@ -8,10 +8,11 @@ import {
   FormControl,
   Select,
 } from '@material-ui/core'
-
+import PropTypes from 'prop-types'
 import PlaceDetails from '../PlaceDetails/PlaceDetails'
 
 import useStyles from './styles'
+import { propTypes } from 'react-bootstrap/esm/Image'
 
 // fetch api for cards
 const List = ({
@@ -84,6 +85,16 @@ const List = ({
       )}
     </div>
   )
+}
+
+List.propTypes = {
+  places: PropTypes.array,
+  type: PropTypes.string.isRequired,
+  setType: PropTypes.func.isRequired,
+  rating: PropTypes.string.isRequired,
+  setRating: PropTypes.func.isRequired,
+  childClicked: PropTypes.bool,
+  isLoading: PropTypes.bool.isRequired,
 }
 
 export default List
