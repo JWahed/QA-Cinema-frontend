@@ -1,0 +1,53 @@
+#screens-page {
+    border: solid gray 1px;
+    align-items: center;
+    width: 75%;
+    margin: auto;
+    flex-wrap: wrap;
+    background-color: whitesmoke;
+    color: black;
+}
+
+.screens-container {
+    max-width: auto;
+    justify-content: center;
+}
+
+.all-screens-cards {
+    width: 50%;
+}
+
+.screens-cards {
+    height: 100%;
+    width: 100%;   
+}
+
+.Standard {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Deluxe {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.screens-img {
+    height: 280px;
+    width: 480px;
+    max-width: 480px;
+}
+
+@media screen and (max-width: 1386px) {
+    .screens-img {
+    height: 100px;
+    width: 150px;
+ }
+}
+
+@media screen and (max-width: 500px) {
+    .screens-img {
+    height: 50px;
+    width: 100px;
+ }
+}
