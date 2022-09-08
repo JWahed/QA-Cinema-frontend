@@ -37,7 +37,7 @@ function App({ authDomainURL, authClientID, stripeKey }) {
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/bookings" element={<BookingsPage />} />
             <Route
-              path="/checkout"
+              path="/checkout/:fullTitle/:date/:movieTime/:seats/:ticketType/:bookerName"
               element={<Checkout stripeKey={stripeKey} />}
             />
             <Route path="/bookings/failed" element={<BookingsPage />} />

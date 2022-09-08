@@ -10,10 +10,9 @@ function Profile() {
                     <h1>Profile</h1>
                     <div className='profile-info-container'>
                         <div className='profile-info-content'>
-                            <img src={user.picture} alt={user.name}/>
-                            <h3>First name: {user.given_name} </h3>
-                            <h3>Surname : {user.family_name} </h3>
-                            <h3>Email : {user.email}</h3>
+                            {user.given_name && <h3>First name: {user.given_name} </h3>}
+                            {user.family_name && <h3>Surname : {user.family_name} </h3>}
+                            {user.email && <h3>Email : {user.email}</h3>}
                         </div>
                     </div>
                 </article>

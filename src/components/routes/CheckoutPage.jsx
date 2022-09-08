@@ -1,14 +1,20 @@
 import { loadStripe } from '@stripe/stripe-js';
 import {useState}from 'react';
+import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Footer from '../Navigation/Footer/Footer';
 import Header from '../Navigation/Header/Header';
 
-function Checkout( {stripeKey } ) {
+function Checkout({ stripeKey }) {
 
-    // const  [adultQuantity, setAdultQuantity] = useState(0);
-    // const  [childQuantity, setChildQuantity] = useState(0);
-    // const  [concessionQuantity, setConcessionQuantity] = useState(0);
+    const {
+        fullTitle,
+        date,
+        movieTime,
+        seats,
+        ticketType,
+        bookerName
+    } = useParams();
 
     let stripePromise;
     const getStripe = () => {
@@ -21,21 +27,23 @@ function Checkout( {stripeKey } ) {
     const [stripeError, setStripeError] = useState(null);
     const [isLoading, setLoading] = useState(false);
 
-    const adultTicket = {
-        price: "price_1LfIZYKyk0jJqLbQIJcL56jM",
-        quantity: 10
-    };
-    const concessionTicket = {
-        price: "price_1LfIaTKyk0jJqLbQb8DulFis",
-        quantity: 2
-    };
-    const childTicket = {
-        price: "price_1LfIa6Kyk0jJqLbQKvNtmTZk",
-        quantity: 3
-    };
+    const adultTicket = "price_1LfIZYKyk0jJqLbQIJcL56jM";
+    const concessionTicket = "price_1LfIaTKyk0jJqLbQb8DulFis";
+    const childTicket = "price_1LfIa6Kyk0jJqLbQKvNtmTZk";
+
+    const checkTicket = (ticketType) => {
+        switch(ticketType) {
+            case "Adult":
+                return {price: adultTicket, quantity: parseFloat(seats)};
+            case "Child":
+                return {price: childTicket, quantity: parseFloat(seats)};
+            case "Concession":
+                return {price: concessionTicket, quantity: parseFloat(seats)};
+        }
+    }
 
     const checkoutOptions = {
-        lineItems: [adultTicket, concessionTicket, childTicket],
+        lineItems: [checkTicket(ticketType)],
         mode: "payment",
         successUrl: `${window.location.origin}/success`,
         cancelUrl: `${window.location.origin}/cancel`
@@ -57,31 +65,22 @@ function Checkout( {stripeKey } ) {
     return (
         <>
             <Header />
+                <div className="basket-summary">
+                    <h3>Movie: {fullTitle}</h3>
+                    <h3>Ticket date: {date}</h3>
+                    <h3>Showing: {movieTime}</h3>
+                    <h3>Number of seats: {seats}</h3>
+                    <h3>Ticket type: {ticketType}</h3>
+                    <h3>Your name: {bookerName}</h3>
+                </div>
                 <div className="checkout">
-                    <h1>Stripe Checkout</h1>
-                        <p className="checkout-title">Booking price</p>
-                        <p className="checkout-description">
-                            Cinema Tickets
-                        </p>
-                    <h1 className="checkout-price"></h1>
-                    {/* <img
-                        className="checkout-product-image"
-                        src={ProductImage}
-                        alt="Product"
-                    /> */}
                     <button
                         className="checkout-button"
                         onClick={redirectToCheckout}
                         disabled={isLoading}
                     >
-                        <div className="grey-circle">
-                            <div className="purple-circle">
-                                {/* <img className="icon" src={CardIcon} alt="credit-card-icon" /> */}
-                            </div>
-                        </div>
-                        <div className="text-container">
-                            <p className="text">{isLoading ? "Loading..." : "Buy"}</p>
-                        </div>
+                        <p className="text">{isLoading ? "Loading..." : "Buy"}</p>
+
                     </button>
                 </div>
             <Footer />

@@ -1,9 +1,11 @@
 .booking-form-body {
-    text-align: center;
+  display: flex;
+  text-align: center;
 }
 .booking-form {
-    display: inline-block;
-    border: 2em black;
+  display: inline-block;
+  border: 2em black;
+  width: 50%;
 }
 
 /* #booking {

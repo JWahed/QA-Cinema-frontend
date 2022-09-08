@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const BookingPageRefactor = () => {
+const Booking = () => {
   const [availableMovies, setAvailableMovies] = useState([]);
   const [title, setSelectedMovie] = useState("");
   const [date, setSelectedDate] = useState("");
@@ -18,13 +18,13 @@ const BookingPageRefactor = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    const res = await axios.post("/api/booking", {
-      title: title,
+    const res = await axios.post("http://localhost:5000/api/booking", {
+      fullTitle: title,
       date: date,
-      time: time,
+      movieTime: time,
       seats: seats,
       ticketType: ticketType,
-      name: name,
+      bookerName: name,
     });
     setIsLoading(false);
     console.log(res.data);
@@ -40,18 +40,18 @@ const BookingPageRefactor = () => {
   }, []);
 
   return (
-    <div className="BookingForm">
+    <>
       <br/>
       <h4> Book Tickets Here</h4>
       <br />
       <form
-        className="Form"
+        className="BookingForm"
         onSubmit={(e) => {
           onSubmitBooking(e);
         }}
       >
         <div className='body'>
-        <label for="movieTitle" class="form-label">
+        <label htmlFor="movieTitle" className="form-label">
           Movie:
         </label>
         <select
@@ -60,18 +60,19 @@ const BookingPageRefactor = () => {
           required
           onChange={(e) => setSelectedMovie(e.target.value)}
         >
-          <option selected>Select a Movie</option>
+          <option >Select a Movie</option>
           {availableMovies.map(({ fullTitle }) => (
             <option
               value={fullTitle}
               onChange={(e) => setSelectedMovie(e.target.value)}
+              key={fullTitle}
             >
               {fullTitle}
             </option>
           ))}
         </select>
         <br />
-        <label for="movieTitle" className="form-label">
+        <label htmlFor="movieTitle" className="form-label">
           Date:
         </label>
         <select
@@ -80,37 +81,38 @@ const BookingPageRefactor = () => {
           required
           onChange={(e) => setSelectedDate(e.target.value)}
         >
-          <option value="">Select a Date</option>
-          <option onChange={(e) => setSelectedDate(e.target.value)}>
-            Saturday: 10/09/2022
+          <option value={date}>Select a Date</option>
+          <option  onChange={(e) => setSelectedDate(e.target.value)}>
+            10-09-2022
           </option>
           <option onChange={(e) => setSelectedDate(e.target.value)}>
-            Sunday: 11/09/2022
+            11-09-2022
           </option>
           <option onChange={(e) => setSelectedDate(e.target.value)}>
-            Monday: 12/09/2022
+            12-09-2022
           </option>
           <option onChange={(e) => setSelectedDate(e.target.value)}>
-            Tuesday: 13/09/2022
+            13/09/2022
           </option>
           <option onChange={(e) => setSelectedDate(e.target.value)}>
-            Wednesday: 14/09/2022
+            14/09/2022
           </option>
           <option onChange={(e) => setSelectedDate(e.target.value)}>
-            Thursday: 15/09/2022
+            15/09/2022
           </option>
           <option onChange={(e) => setSelectedDate(e.target.value)}>
-            Friday: 16/09/2022
+            16/09/2022
           </option>
           ))
         </select>
         <br />
-        <label for="movieTitle" className="form-label">
+        <label htmlFor="movieTitle" className="form-label">
           Time:
         </label>
         <select
           className="form-select"
           aria-label="Default select example"
+          type="text"
           required
           onChange={(e) => setSelectedTime(e.target.value)}
         >
@@ -140,37 +142,22 @@ const BookingPageRefactor = () => {
           type="number"
           placeholder="Enter number of seats"
           id="seats"
-          onChange={(e) => setSelectedSeat(e.target.value)}
+          onChange={(e) => setSelectedSeat((e.target.value))}
         />
         <br />
-        <label htmlFor="movieTitle" className="form-label"> Please select your ticket type:</label>
-        <br />
-        <input
+        <select
+          className="form-select"
+          aria-label="Default select example"
+          type="text"
           required
-          type='radio'
-          id='adult'
-          name='ticketType'
-          onChange={(e) => setTicketType(e.target.value)}
-        />
-        <label htmlFor='adult' className="form-label"> Adult Seats (£{ticketPrice[0]} each)</label>
-        <br />
-        <input
-          required
-          type='radio'
-          id='child'
-          name='ticketType'
-          onChange={(e) => setTicketType(e.target.value)}
-        />
-        <label htmlFor='child' className="form-label"> Child Seats (£{ticketPrice[1]} each)</label>
-        <br />
-        <input
-          required
-          type='radio'
-          id='concession'
-          name='ticketType'
-          onChange={(e) => setTicketType(e.target.value)}
-        />
-        <label htmlFor='concession' className="form-label"> Concession Seats (£{ticketPrice[2]} each)</label>
+          onChange={(e) => setTicketType((e.target.value).split(' ')[0])}
+        >
+          <option value="">Select a ticket type</option>
+          <option>Adult {"£" + (ticketPrice[0])}</option>
+          <option>Child {"£" + (ticketPrice[1])}</option>
+          <option>Concession {"£" + (ticketPrice[2])}</option>
+          ))
+        </select>
         <br />
         <br />
         <label htmlFor='name' className="form-label">Booker Name:</label>
@@ -185,46 +172,18 @@ const BookingPageRefactor = () => {
           onChange={(e) => setName(e.target.value)}
         />
         <br />
+        
         <button type="submit" className="btn btn-primary bookingBtn">
           {isLoading && <i className='fas fa-spinner fa-pulse' />}
+          <Link to={`/checkout/${title}/${date}/${time}/${seats}/${ticketType}/${name}`}>
           {!isLoading && 'Book Tickets!'}
+          </Link>
+
         </button>
         </div>
       </form>
-    </div>
+    </>
   );
 };
 
-export default BookingPageRefactor;
-
-// import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
-
-// function Booking() {
-//   return (
-//     <div id="booking">
-//         <Form>
-//         <Form.Group className="mb-3" controlId="formBasicEmail">
-//             <Form.Label>Email address</Form.Label>
-//             <Form.Control type="email" placeholder="Enter email" />
-//             <Form.Text className="text-muted">
-//                 We&apos;ll never share your email with anyone else.
-//             </Form.Text>
-//         </Form.Group>
-
-//         <Form.Group className="mb-3" controlId="formBasicPassword">
-//             <Form.Label>Password</Form.Label>
-//             <Form.Control type="password" placeholder="Password" />
-//         </Form.Group>
-//         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-//             <Form.Check type="checkbox" label="Check me out" />
-//         </Form.Group>
-//         <Button variant="primary" type="submit">
-//             Submit
-//         </Button>
-//         </Form>
-//     </div>
-//   );
-// }
-
-// export default Booking;
+export default Booking;
