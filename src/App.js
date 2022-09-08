@@ -11,6 +11,9 @@ import MovieDetails from './components/routes/MovieDetails'
 import NewReleaseMovieRequest from './components/routes/NewReleaseList'
 import ScreensPage from './components/routes/ScreenPage'
 import ClassificationPage from './components/routes/ClassificationPage'
+import DiscussionBoard from './components/routes/discussionBoard';
+
+
 
 function App() {
   return (
@@ -27,10 +30,10 @@ function App() {
           <Route path='/NewReleaseList/:_id' element={<MovieDetails />} />
           <Route path='/screens' element={<ScreensPage />} />
           <Route path='/Classification' element={<ClassificationPage />} />
+          <Route path='/DiscussionBoard' element={<DiscussionBoard />} />
         </Routes>
       </BrowserRouter>
     </div>
-  )
+  );
 }
-
 export default App

@@ -31,7 +31,7 @@ function NavigationBar() {
             </Nav.Link>
             <Nav.Link href="/bookings">Bookings</Nav.Link>
             <Nav.Link href="/NewReleaseList">New releases</Nav.Link>
-            <Nav.Link href="/discussion-board">Discussion board</Nav.Link>
+            <Nav.Link href="/DiscussionBoard">Discussion board</Nav.Link>
             <NavDropdown title="Information" id="basic-nav-dropdown">
               <NavDropdown.Item href="/opening-times">Opening hours</NavDropdown.Item>
               <NavDropdown.Item href="/getting-here">Getting here</NavDropdown.Item>
