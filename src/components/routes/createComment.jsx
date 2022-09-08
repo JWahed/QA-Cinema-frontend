@@ -2,8 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const CreateComment = () => {
-  //const [title, setTitle] = useState('');
-  //const [timestamp, setTimestamp] = useState('');
+
   const [commentAuthor, setCommentAuthor] = useState('');
   const [comment, setNewComment] = useState('');
   const navigate = useNavigate();
@@ -17,7 +16,7 @@ const CreateComment = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(commentPost),
     }).then(() => {
-      // navigate.go(-1);
+
       navigate.push("/");
     });
   };

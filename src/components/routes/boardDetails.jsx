@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const BoardDetails5 = ({topics}) => {
+const BoardDetails = ({topics}) => {
  // const topics = props.topics;
   // const title = props.title;
   // console.log(topics);
@@ -22,4 +22,4 @@ const BoardDetails5 = ({topics}) => {
   );
 
       }
-export default BoardDetails5;
+export default BoardDetails;

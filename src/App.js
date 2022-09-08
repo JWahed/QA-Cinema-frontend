@@ -1,5 +1,5 @@
-
-import DiscussionBoard3 from './components/routes/DiscussionBoard3';
+//import { BrowserRouter } from 'react-router-dom';
+import DiscussionBoard from './components/routes/discussionBoard';
 //import AboutPage from './components/routes/AboutPage';
 //import OpeningTimes from './components/routes/OpeningTimes';
 import './App.css';
@@ -8,7 +8,8 @@ import './App.css';
 function App() {
   return (
         <>
-        <DiscussionBoard3/>
+        
+        <DiscussionBoard/>
 
         </>
   );

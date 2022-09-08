@@ -7,10 +7,12 @@ import NavBar from "./navBar";
 
 
 
-const discussionDetails = () => {
+const discussion = () => {
   const navigate = useNavigate();
   const [discussion, setDiscussion] = useState([]);
   const {id} = useParams();
+  const {_id} = useParams();
+
   
   const getDiscussionReq = async() => {
       const url = ('http://localhost:5000/api/discussion/' + id);
@@ -23,16 +25,14 @@ const discussionDetails = () => {
       getDiscussionReq();
     },[]);
 
-    console.log(`http://localhost:5000/api/discussion/${id}`);
-  
+
     const topicDelete = (id, e) => {
       e.preventDefault();
-      axios.delete('http://localhost:5000/api/discussion/:id' + id)
+       axios.delete(`http://localhost:5000/api/discussion/` + id)
       .then(res => console.log('Deleted!!!!!!!', res)).catch(err => console.log(err))
        .then(() => {
        navigate('/')
        })
-
     }
   
   
@@ -48,12 +48,13 @@ const discussionDetails = () => {
 
       { discussion && (
                 <article>
+                
                 <h2>Topic { discussion.topic}</h2>
                 <p>Written by { discussion.topicAuthor }</p>
                 <br />
                 <p>{ discussion.comment }</p>
                 <div> {discussion.body}</div>
-                <button onClick={(e) => topicDelete(discussion.id, e)}>delete</button>
+                <button onClick={(e) => topicDelete(discussion._id, e)}>delete</button>
                 {/*<Home />*/}
                 <div>
           <CreateComment topicID={id}/>
@@ -72,4 +73,4 @@ const discussionDetails = () => {
 
 
 
-export default discussionDetails;
+export default discussion;
