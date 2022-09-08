@@ -1,4 +1,4 @@
-import '../../contact.css'
+import '../contactComponents/contact.css'
 import Header from '../Navigation/Header/Header'
 import Footer from '../Navigation/Footer/Footer'
 import ContactForm from '../contactComponents/ContactForm'
