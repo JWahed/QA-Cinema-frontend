@@ -20,8 +20,8 @@ function SearchBar() {
     term = term.trim().replace(/\s+/g, ' ');
     setSearchTerm(term);
     try {
-        const res = await axios.get(`http://www.omdbapi.com/?apikey=dd7f33e1&s=${term}`);
-        const result = res.data.Search;
+        const res = await axios.get(`http://localhost:5000/api/movies/`);
+        const result = res.data;
         if (!result) {
             return
         }
@@ -50,16 +50,16 @@ function SearchBar() {
         </div>
         <div className="dropdown">
           {data
-            .filter((item) => (
-            item.Title.toLowerCase().startsWith(searchTerm.toLowerCase())
+            .filter((movie) => (
+              movie.fullTitle.toLowerCase().startsWith(searchTerm.toLowerCase())
             ))
-            .map((item) => (
+            .map((movie) => (
               <div
                 className="dropdown-row"
-                key={item.Title}
+                key={movie.fullTitle}
               >
-                <a href={`/movies/${item.imdbID}`}>
-                    {item.Title}&nbsp;({item.Year})
+                <a href={`/movies/${movie._id}`}>
+                    {movie.fullTitle}
                 </a>
               </div>
             ))}
