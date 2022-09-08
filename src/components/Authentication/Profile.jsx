@@ -14,7 +14,6 @@ function Profile() {
                             <h3>First name: {user.given_name} </h3>
                             <h3>Surname : {user.family_name} </h3>
                             <h3>Email : {user.email}</h3>
-
                         </div>
                     </div>
                 </article>

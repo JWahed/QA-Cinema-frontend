@@ -22,6 +22,7 @@ function SearchBar() {
     try {
         const res = await axios.get(`http://localhost:5000/api/movies/`);
         const result = res.data;
+        console.log(result);
         if (!result) {
             return
         }
@@ -58,7 +59,7 @@ function SearchBar() {
                 className="dropdown-row"
                 key={movie.fullTitle}
               >
-                <a href={`/movies/${movie._id}`}>
+                <a href={`/CurrentMovieList/${movie._id}`}>
                     {movie.fullTitle}
                 </a>
               </div>

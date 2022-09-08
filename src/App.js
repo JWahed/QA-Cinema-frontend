@@ -18,7 +18,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import PropTypes from "prop-types";
 
 function App({ authDomainURL, authClientID, stripeKey }) {
-  if (!authDomainURL || !authClientID) {
+  if (!authDomainURL || !authClientID || !stripeKey) {
     return <h1 id="load">Loading...</h1>;
   }
 

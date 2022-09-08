@@ -129,7 +129,7 @@ const BookingPageRefactor = () => {
         </Link>
         <br />
         <br />
-        <label for="movieTitle" className="form-label">
+        <label htmlFor="movieTitle" className="form-label">
           Seats:
         </label>
         <input
@@ -143,7 +143,7 @@ const BookingPageRefactor = () => {
           onChange={(e) => setSelectedSeat(e.target.value)}
         />
         <br />
-        <label for="movieTitle" className="form-label"> Please select your ticket type:</label>
+        <label htmlFor="movieTitle" className="form-label"> Please select your ticket type:</label>
         <br />
         <input
           required
