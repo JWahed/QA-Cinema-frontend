@@ -7,6 +7,7 @@ import NotFound from "./components/routes/NotFound";
 import Attractions from "./components/routes/Attractions";
 import ProfilePage from "./components/routes/ProfilePage";
 import BookingsPage from "./components/routes/BookingsPage";
+import FailedPaymentPage from "./components/routes/FailedPaymentPage";
 import Checkout from "./components/routes/CheckoutPage";
 import MovieRequest from "./components/routes/CurrentMovieList";
 import MovieDetails from "./components/routes/MovieDetails";
@@ -17,9 +18,15 @@ import ClassificationPage from "./components/routes/ClassificationPage";
 import { Auth0Provider } from "@auth0/auth0-react";
 import PropTypes from "prop-types";
 
+
 function App({ authDomainURL, authClientID, stripeKey }) {
+  
   if (!authDomainURL || !authClientID || !stripeKey) {
-    return <h1 id="load">Loading...</h1>;
+    return (
+      <div className="App-load">
+        <h1>Loading...</h1>
+      </div>
+    );
   }
 
   return (
@@ -40,8 +47,9 @@ function App({ authDomainURL, authClientID, stripeKey }) {
               path="/checkout/:fullTitle/:date/:movieTime/:seats/:ticketType/:bookerName"
               element={<Checkout stripeKey={stripeKey} />}
             />
-            <Route path="/bookings/failed" element={<BookingsPage />} />
-            <Route path="/bookings/success" element={<BookingsPage />} />
+            <Route path="/Failed" element={<FailedPaymentPage />}/>
+            <Route path="/Bookings/failed" element={<BookingsPage />} />
+            <Route path="/Bookings/success" element={<BookingsPage />} />
             <Route path="/CurrentMovieList" element={<MovieRequest />} />
             <Route path="/CurrentMovieList/:_id" element={<MovieDetails />} />
             <Route
@@ -49,7 +57,7 @@ function App({ authDomainURL, authClientID, stripeKey }) {
               element={<NewReleaseMovieRequest />}
             />
             <Route path="/NewReleaseList/:_id" element={<MovieDetails />} />
-            <Route path="/screens" element={<ScreensPage />} />
+            <Route path="/Screens" element={<ScreensPage />} />
             <Route path="/Classification" element={<ClassificationPage />} />
           </Routes>
         </BrowserRouter>
