@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Homepage from './components/routes/Homepage'
 import NotFound from './components/routes/NotFound'
 import Attractions from './components/routes/Attractions'
+import Contact from './components/routes/Contact'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path='/' element={<Homepage />} />
           <Route path='/*' element={<NotFound />} />
           <Route path='/Attractions' element={<Attractions />} />
+          <Route path='/Contact' element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </div>
