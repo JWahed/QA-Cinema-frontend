@@ -10,9 +10,10 @@ import {
 } from '@material-ui/core'
 
 import PlaceDetails from '../placeDetails/PlaceDetails'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 import useStyles from './styles'
+import { propTypes } from 'react-bootstrap/esm/Image'
 
 // fetch api for cards
 const List = ({
@@ -23,9 +24,7 @@ const List = ({
   setRating,
   childClicked,
   isLoading,
-  
 }) => {
-  
   const classes = useStyles()
 
   console.log({ childClicked })
@@ -94,10 +93,9 @@ List.propTypes = {
   type: PropTypes.func.isRequired,
   setType: PropTypes.object.isRequired,
   rating: PropTypes.array,
-  setRating: PropTypes.func,
+  setRating: PropTypes.func.isRequired,
   childClicked: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.iseRequired,
 }
-
 
 export default List

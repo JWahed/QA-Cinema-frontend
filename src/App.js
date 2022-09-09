@@ -7,7 +7,6 @@ import NotFound from "./components/routes/NotFound";
 import Attractions from "./components/routes/Attractions";
 import ProfilePage from "./components/routes/ProfilePage";
 import BookingsPage from "./components/routes/BookingsPage";
-import SuccessPaymentPage from "./components/routes/SuccessPaymentPage";
 import FailedPaymentPage from "./components/routes/FailedPaymentPage";
 import Checkout from "./components/routes/CheckoutPage";
 import MovieRequest from "./components/routes/CurrentMovieList";
@@ -16,8 +15,9 @@ import NewReleaseMovieRequest from "./components/routes/NewReleaseList";
 import ScreensPage from "./components/routes/ScreenPage";
 import ClassificationPage from "./components/routes/ClassificationPage";
 import Contact from "./components/routes/Contact";
-import DiscussionBoard from './components/routes/discussionBoard';
-import AboutPage from './components/routes/AboutPage';
+import DiscussionBoard from "./components/routes/discussionBoard";
+import AboutPage from "./components/routes/AboutPage";
+import SuccessPaymentPage from "./components/routes/SuccessPaymentPage";
 
 import { Auth0Provider } from "@auth0/auth0-react";
 import PropTypes from "prop-types";
@@ -42,7 +42,7 @@ function App({ authDomainURL, authClientID, stripeKey }) {
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/*" element={<NotFound />} />
-            <Route path="/Attractions" element={<Attractions />} />
+            <Route path="/attractions" element={<Attractions />} />
             <Route path="/Profile" element={<ProfilePage />} />
             <Route path="/bookings" element={<BookingsPage />} />
             <Route
@@ -54,6 +54,9 @@ function App({ authDomainURL, authClientID, stripeKey }) {
             <Route path="/CurrentMovieList" element={<MovieRequest />} />
             <Route path="/CurrentMovieList/:_id" element={<MovieDetails />} />
             <Route path="/NewReleaseList/:_id" element={<MovieDetails />} />
+            <Route path="/CurrentMovieList" element={<MovieRequest />} />
+            <Route path="/CurrentMovieList/:_id" element={<MovieDetails />} />
+            <Route path="/NewReleaseList/:_id" element={<MovieDetails />} />
             <Route
               path="/NewReleaseList"
               element={<NewReleaseMovieRequest />}
@@ -62,7 +65,7 @@ function App({ authDomainURL, authClientID, stripeKey }) {
             <Route path="/Classification" element={<ClassificationPage />} />
             <Route path="/Contact" element={<Contact />} />
             <Route path="/About" element={<AboutPage />} />
-            <Route path='/DiscussionBoard/*' element={<DiscussionBoard />} />
+            <Route path="/DiscussionBoard/*" element={<DiscussionBoard />} />
           </Routes>
         </BrowserRouter>
       </Auth0Provider>

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react'
 import {
   Box,
@@ -13,6 +14,7 @@ import {
 import LocationOnIcon from '@material-ui/icons/LocationOn'
 import PhoneIcon from '@material-ui/icons/Phone'
 import Rating from '@material-ui/lab/Rating'
+import PropTypes from 'prop-types'
 
 import useStyles from './styles'
 
@@ -106,6 +108,12 @@ const PlaceDetails = ({ place, selected, refProp }) => {
       </CardContent>
     </Card>
   )
+}
+
+PlaceDetails.propTypes = {
+  place: PropTypes.object.isRequired,
+  selected: PropTypes.bool.isRequired,
+  refProp: PropTypes.object,
 }
 
 export default PlaceDetails
