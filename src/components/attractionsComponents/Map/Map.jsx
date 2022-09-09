@@ -20,7 +20,6 @@ const Map = ({
   console.log(setBounds);
   console.log(coordinates);
   console.log(places);
-  console.log(places);
   console.log(setChildClicked);
 
   return (
@@ -77,11 +76,11 @@ const Map = ({
 }
 
 Map.propTypes = {
-  setCoordinates: PropTypes.string,
-  setBounds: PropTypes.string,
-  setCoordinates: PropTypes.string,
-  places: PropTypes.string,
-  setChildClicked: PropTypes.string,
+  setCoordinates: PropTypes.func.isRequired,
+  setBounds: PropTypes.func.isRequired,
+  coordinates: PropTypes.object.isRequired,
+  places: PropTypes.array,
+  setChildClicked: PropTypes.func.isRequired,
 };
 
 export default Map

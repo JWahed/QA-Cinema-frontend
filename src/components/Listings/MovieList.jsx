@@ -11,10 +11,10 @@ const setRatingClass = (rating) => {
     }
 };
 
-const MovieList = (props) => {
+const MovieList = (movies) => {
     return(
         <>
-            {props.filtered.map((movie) => (
+            {movies.filtered.map((movie) => (
             <Link key={movie.fullTitle + movie._id} to={`/CurrentMovieList/${movie._id}`}>            
                 <div className="movie">
                     
