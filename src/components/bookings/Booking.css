@@ -1,0 +1,21 @@
+.booking-form-body {
+  display: flex;
+  text-align: center;
+}
+.booking-form {
+  display: inline-block;
+  border: 2em black;
+  width: 50%;
+}
+
+/* #booking {
+    display:flex;
+    align-content: center;
+    width: 50%;
+    margin: auto;
+} */
+
+/* .mb-3 {
+    align-content: center;
+    margin-left: 50%;
+} */
