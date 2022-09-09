@@ -16,9 +16,11 @@ import ScreensPage from "./components/routes/ScreenPage";
 import ClassificationPage from "./components/routes/ClassificationPage";
 import Contact from "./components/routes/Contact";
 import DiscussionBoard from './components/routes/discussionBoard';
+import About from './components/routes/AboutPage';
 
 import { Auth0Provider } from "@auth0/auth0-react";
 import PropTypes from "prop-types";
+import OpeningTimesPage from "./components/routes/OpeningTimesPage";
 
 function App({ authDomainURL, authClientID, stripeKey }) {
   if (!authDomainURL || !authClientID || !stripeKey) {
@@ -58,8 +60,10 @@ function App({ authDomainURL, authClientID, stripeKey }) {
             />
             <Route path="/Screens" element={<ScreensPage />} />
             <Route path="/Classification" element={<ClassificationPage />} />
-            <Route path="/Contact" element={<Contact />} />
+            <Route path="/Contact-us" element={<Contact />} />
             <Route path='/DiscussionBoard/*' element={<DiscussionBoard />} />
+            <Route path='/About' element={<About />} />
+            <Route path='/Opening-times' element={<OpeningTimesPage/>} />
           </Routes>
         </BrowserRouter>
       </Auth0Provider>

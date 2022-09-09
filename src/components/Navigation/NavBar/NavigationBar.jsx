@@ -46,13 +46,13 @@ function NavigationBar() {
             </Nav.Link>
             <NavDropdown title="Information" id="basic-nav-dropdown">
               <NavDropdown.Item href="/opening-times">
-                Opening hours
+                Opening Times
               </NavDropdown.Item>
-              <NavDropdown.Item href="/getting-here">
-                Getting here
+              <NavDropdown.Item href="/Attractions">
+                Attractions
               </NavDropdown.Item>
               <NavDropdown.Item href="/classification">
-                Film Classifications
+                Classifications
               </NavDropdown.Item>
               <NavDropdown.Item href="/screens">Screens</NavDropdown.Item>
               <NavDropdown.Item href="/about">About</NavDropdown.Item>
