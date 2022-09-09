@@ -77,7 +77,8 @@ function Checkout({ stripeKey }) {
                 </div>
                 <div className="checkout">
                     <button
-                        className="checkout-button"
+                    type='button'
+                        className="btn btn-primary"
                         onClick={redirectToCheckout}
                         disabled={isLoading}
                     >

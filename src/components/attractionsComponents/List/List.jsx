@@ -12,6 +12,7 @@ import {
 import PlaceDetails from '../placeDetails/PlaceDetails'
 import PropTypes from 'prop-types'
 
+
 import useStyles from './styles'
 import { propTypes } from 'react-bootstrap/esm/Image'
 

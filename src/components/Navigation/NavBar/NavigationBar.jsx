@@ -42,15 +42,15 @@ function NavigationBar() {
               <LoginButton />
               <LogoutButton />
             </Nav.Link>
-            <NavDropdown title='Information' id='basic-nav-dropdown'>
-              <NavDropdown.Item href='/opening-times'>
-                Opening hours
+            <NavDropdown title="Information" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/opening-times">
+                Opening Times
               </NavDropdown.Item>
-              <NavDropdown.Item href='/attractions'>
+              <NavDropdown.Item href="/Attractions">
                 Attractions
               </NavDropdown.Item>
-              <NavDropdown.Item href='/classification'>
-                Film Classifications
+              <NavDropdown.Item href="/classification">
+                Classifications
               </NavDropdown.Item>
               <NavDropdown.Item href='/screens'>Screens</NavDropdown.Item>
               <NavDropdown.Item href='/about'>About</NavDropdown.Item>

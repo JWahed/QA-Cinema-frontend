@@ -1,16 +1,15 @@
 import Header from "../navigation/header/Header";
 import Footer from "../navigation/footer/Footer";
-import About from "../about/About";
-import '../about/About.css'
+import OpeningTimes from "../openingTimes/OpeningTimes";
 
-const AboutPage = () => {
+const OpeningTimesPage = () => {
   return (
     <>
       <Header />
-      <About />
+      <OpeningTimes />
       <Footer />
     </>
   );
 };
 
-export default AboutPage;
+export default OpeningTimesPage;
