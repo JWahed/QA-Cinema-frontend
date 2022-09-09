@@ -7,6 +7,7 @@ import NotFound from "./components/routes/NotFound";
 import Attractions from "./components/routes/Attractions";
 import ProfilePage from "./components/routes/ProfilePage";
 import BookingsPage from "./components/routes/BookingsPage";
+import SuccessPaymentPage from "./components/routes/SuccessPaymentPage";
 import FailedPaymentPage from "./components/routes/FailedPaymentPage";
 import Checkout from "./components/routes/CheckoutPage";
 import MovieRequest from "./components/routes/CurrentMovieList";
@@ -48,7 +49,7 @@ function App({ authDomainURL, authClientID, stripeKey }) {
               path="/checkout/:fullTitle/:date/:movieTime/:seats/:ticketType/:bookerName"
               element={<Checkout stripeKey={stripeKey} />}
             />
-            <Route path="/Success" element={<FailedPaymentPage />} />
+            <Route path="/Success" element={<SuccessPaymentPage />} />
             <Route path="/Failed" element={<FailedPaymentPage />} />
             <Route path="/CurrentMovieList" element={<MovieRequest />} />
             <Route path="/CurrentMovieList/:_id" element={<MovieDetails />} />
