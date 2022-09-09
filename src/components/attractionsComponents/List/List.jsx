@@ -9,7 +9,7 @@ import {
   Select,
 } from '@material-ui/core'
 
-import PlaceDetails from '../PlaceDetails/PlaceDetails'
+import PlaceDetails from '../placeDetails/PlaceDetails'
 
 import useStyles from './styles'
 
