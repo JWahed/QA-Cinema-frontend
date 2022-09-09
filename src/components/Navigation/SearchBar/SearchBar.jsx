@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ReactComponent as MagGlass } from '../../../magnifyingGlass.svg';
+import { ReactComponent as MagGlass } from '../../../assets/magnifyingGlass.svg';
 import axios from 'axios';
 import './SearchBar.css';
 
@@ -22,12 +22,12 @@ function SearchBar() {
     try {
         const res = await axios.get(`http://localhost:5000/api/movies/`);
         const result = res.data;
+        console.log(result);
         if (!result) {
             return
         }
         setData(result);
     } catch (err) {
-        console.error(err);
         window.alert("Invalid query \nCheck console for error");
     }
   };
@@ -59,7 +59,7 @@ function SearchBar() {
                 className="dropdown-row"
                 key={movie.fullTitle}
               >
-                <a href={`/movies/${movie._id}`}>
+                <a href={`/CurrentMovieList/${movie._id}`}>
                     {movie.fullTitle}
                 </a>
               </div>

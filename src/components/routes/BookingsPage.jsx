@@ -1,15 +1,16 @@
+import Booking from '../bookings/Booking';
 import Header from '../navigation/header/Header';
 import Footer from '../navigation/footer/Footer';
-import HomeCarousel from '../home/Carousel';
 
-function Homepage() {
+function BookingPage() {
+
     return (
         <>
             <Header />
-            <HomeCarousel />
+            <Booking />
             <Footer />
         </>
     );
 }
 
-export default Homepage;
+export default BookingPage;

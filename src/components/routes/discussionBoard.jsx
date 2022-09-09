@@ -1,41 +1,34 @@
-import {
-  Route,
-  Routes,
-  BrowserRouter,
-} from "react-router-dom";
-import NavBar from "./navBar";
-import Create from "./create";
-import BoardContainer from "./boardContainer";
-import CreateComment from "./createComment";
-import Discussion from './discussion';
-//import AboutPage from './aboutPage';
-//import OpeningTimes from './openingTimes';
-import CommentDetails from "./comments";
-
+import { Route, Routes } from "react-router-dom";
+import NavBar from "../discussionComponents/discussionNavBar";
+import Create from "../discussionComponents/createTopic";
+import BoardContainer from "../discussionComponents/boardContainer";
+import CreateComment from "../discussionComponents/createComment";
+import Discussion from "../discussionComponents/discussion";
+import Header from "../navigation/header/Header";
+import Footer from "../navigation/footer/Footer";
+import CommentDetails from "../discussionComponents/comments";
 
 function DiscussionBoard() {
   return (
     <>
-      <>
-      </>
-
-      <BrowserRouter>
-
-        <Routes>
-
-          <Route exact path="/" element={<BoardContainer />} />
-            <Route path="/create" element={<Create />} />
-            <Route path="/createComment" element={<CreateComment />} />
-            <Route path="/discussion/:id" element={<Discussion />} />
-            <Route path="/comments" element={<CommentDetails />} />
-            <Route path="/navBar" element={<NavBar />} />
-            {/*<Route path="/aboutPage" element={<AboutPage />} />*/}
-            {/*<Route path="/openingTimes" element={<OpeningTimes />} />*/}
-
-
-
-        </Routes>
-      </BrowserRouter>
+      <Header />
+      <Routes>
+        <Route exact path="/" element={<BoardContainer />} />
+        <Route path="/DiscussionBoard/createTopic" element={<Create />} />
+        <Route
+          path="/DiscussionBoard/createComment"
+          element={<CreateComment />}
+        />
+        <Route
+          path="/DiscussionBoard/discussion/:id"
+          element={<Discussion />}
+        />
+        <Route path="/DiscussionBoard/comments" element={<CommentDetails />} />
+        <Route path="/DiscussionBoard/discussionNavBar" element={<NavBar />} />
+        {/*<Route path="/aboutPage" element={<AboutPage />} />*/}
+        {/*<Route path="/openingTimes" element={<OpeningTimes />} />*/}
+      </Routes>
+      <Footer />
     </>
   );
 }

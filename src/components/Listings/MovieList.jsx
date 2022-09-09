@@ -13,11 +13,14 @@ const setRatingClass = (rating) => {
   }
 }
 
-const MovieList = (props) => {
+const MovieList = (movies) => {
   return (
     <>
-      {props.filtered.map((movie) => (
-        <Link to={`/CurrentMovieList/${movie._id}`}>
+      {movies.filtered.map((movie) => (
+        <Link
+          key={movie.fullTitle + movie._id}
+          to={`/CurrentMovieList/${movie._id}`}
+        >
           <div className='movie'>
             <img src={movie.poster} alt='movie' />
             <div className='movie-info'>
@@ -41,7 +44,7 @@ const MovieList = (props) => {
 }
 
 MovieList.propTypes = {
-  filtered: PropTypes.object.isRequired,
+  filtered: PropTypes.array.isRequired,
 }
 
 export default MovieList

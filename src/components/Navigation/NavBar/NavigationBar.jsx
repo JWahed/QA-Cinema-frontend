@@ -2,10 +2,15 @@ import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
-import logo from '../../../logoPrototype.png'
+import LoginButton from '../../authentication/LoginButton'
+import LogoutButton from '../../authentication/LogoutButton'
+import logo from '../../../assets/logo.png'
 import './NavigationBar.css'
+import { useAuth0 } from '@auth0/auth0-react'
 
 function NavigationBar() {
+  const { isAuthenticated } = useAuth0()
+
   return (
     <Navbar bg='light' expand='lg'>
       <Container>
@@ -32,12 +37,17 @@ function NavigationBar() {
             <Nav.Link href='/bookings'>Bookings</Nav.Link>
             <Nav.Link href='/NewReleaseList'>New releases</Nav.Link>
             <Nav.Link href='/DiscussionBoard'>Discussion board</Nav.Link>
+            {isAuthenticated && <Nav.Link href='/profile'>Profile</Nav.Link>}
+            <Nav.Link>
+              <LoginButton />
+              <LogoutButton />
+            </Nav.Link>
             <NavDropdown title='Information' id='basic-nav-dropdown'>
               <NavDropdown.Item href='/opening-times'>
                 Opening hours
               </NavDropdown.Item>
-              <NavDropdown.Item href='/getting-here'>
-                Getting here
+              <NavDropdown.Item href='/attractions'>
+                Attractions
               </NavDropdown.Item>
               <NavDropdown.Item href='/classification'>
                 Film Classifications

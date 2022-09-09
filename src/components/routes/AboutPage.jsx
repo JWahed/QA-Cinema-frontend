@@ -1,7 +1,11 @@
+import Header from "../navigation/header/Header";
+import Footer from "../navigation/footer/Footer";
+
+
 const AboutPage = () => {
   return (
     <>
-
+      <Header />
       <h1>About QA Cinemas</h1>
       <h2></h2>
       <br />
@@ -134,6 +138,7 @@ const AboutPage = () => {
         </ul>
         <br />
       </div>
+      <Footer />
     </>
   );
 };

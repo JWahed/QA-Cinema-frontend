@@ -8,8 +8,9 @@ import {
   FormControl,
   Select,
 } from '@material-ui/core'
+
+import PlaceDetails from '../placeDetails/PlaceDetails'
 import PropTypes from 'prop-types'
-import PlaceDetails from '../PlaceDetails/PlaceDetails'
 
 import useStyles from './styles'
 import { propTypes } from 'react-bootstrap/esm/Image'
@@ -88,13 +89,13 @@ const List = ({
 }
 
 List.propTypes = {
-  places: PropTypes.array,
-  type: PropTypes.string.isRequired,
-  setType: PropTypes.func.isRequired,
-  rating: PropTypes.string.isRequired,
+  places: PropTypes.func.isRequired,
+  type: PropTypes.func.isRequired,
+  setType: PropTypes.object.isRequired,
+  rating: PropTypes.array,
   setRating: PropTypes.func.isRequired,
-  childClicked: PropTypes.bool,
-  isLoading: PropTypes.bool.isRequired,
+  childClicked: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.iseRequired,
 }
 
 export default List

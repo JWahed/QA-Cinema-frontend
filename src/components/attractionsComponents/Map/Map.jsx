@@ -33,8 +33,8 @@ const Map = ({
         {places?.map((place, i) => (
           <div
             className={classes.markerContainer}
-            lat={Number(place.latitude)}
-            lng={Number(place.longitude)}
+            lat={place.latitude}
+            lng={place.longitude}
             key={i}
           >
             {!isDesktop ? (

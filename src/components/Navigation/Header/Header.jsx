@@ -1,10 +1,10 @@
-import Navigation from '../navBar/NavigationBar'
+import NavigationBar from '../navBar/NavigationBar'
 import SearchBar from '../searchBar/SearchBar'
 
 function Header() {
   return (
     <header>
-      <Navigation />
+      <NavigationBar />
       <SearchBar />
     </header>
   )
