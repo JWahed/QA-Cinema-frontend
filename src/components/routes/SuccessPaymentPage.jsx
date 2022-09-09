@@ -1,5 +1,5 @@
-import Header from "../Navigation/Header/Header";
-import Footer from "../Navigation/Footer/Footer";
+import Header from "../navigation/Header/Header";
+import Footer from "../navigation/Footer/Footer";
 
 function SuccessPaymentPage() {
     return(
