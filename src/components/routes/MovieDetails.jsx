@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
-import Header from "../Navigation/Header/Header";
-import Footer from "../Navigation/Footer/Footer";
+import Header from "../navigation/header/Header";
+import Footer from "../navigation/footer/Footer";
 import "../details/movieDetails.css"
 
 const MovieDetails = () => {

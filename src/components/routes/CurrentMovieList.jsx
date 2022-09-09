@@ -3,8 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../listings/MovieListing.css"
 import MovieList from "../listings/MovieList";
 import Filter from "../listings/MovieFilter";
-import Header from "../Navigation/Header/Header";
-import Footer from "../Navigation/Footer/Footer";
+import Header from "../navigation/header/Header";
+import Footer from "../navigation/footer/Footer";
 import axios from "axios";
 
 

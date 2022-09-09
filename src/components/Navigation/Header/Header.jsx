@@ -1,5 +1,5 @@
-import NavigationBar from "../NavBar/NavigationBar";
-import SearchBar from "../SearchBar/SearchBar";
+import NavigationBar from "../navBar/NavigationBar";
+import SearchBar from "../searchBar/SearchBar";
 
 function Header() {
     return (

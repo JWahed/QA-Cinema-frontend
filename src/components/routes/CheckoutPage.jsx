@@ -2,8 +2,8 @@ import { loadStripe } from '@stripe/stripe-js';
 import {useState}from 'react';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Footer from '../Navigation/Footer/Footer';
-import Header from '../Navigation/Header/Header';
+import Footer from '../navigation/footer/Footer';
+import Header from '../navigation/header/Header';
 
 function Checkout({ stripeKey }) {
 
