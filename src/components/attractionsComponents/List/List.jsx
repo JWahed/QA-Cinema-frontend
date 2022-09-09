@@ -10,6 +10,8 @@ import {
 } from '@material-ui/core'
 
 import PlaceDetails from '../placeDetails/PlaceDetails'
+import PropTypes from 'prop-types';
+
 
 import useStyles from './styles'
 
@@ -22,7 +24,9 @@ const List = ({
   setRating,
   childClicked,
   isLoading,
+  
 }) => {
+  
   const classes = useStyles()
 
   console.log({ childClicked })
@@ -85,5 +89,15 @@ const List = ({
     </div>
   )
 }
+
+List.propTypes = {
+  places: PropTypes.func.isRequired,
+  type: PropTypes.func.isRequired,
+  setType: PropTypes.object.isRequired,
+  rating: PropTypes.array,
+  childClicked: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.iseRequired,
+}
+
 
 export default List
