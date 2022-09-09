@@ -9,7 +9,6 @@ function Loader() {
         try {
           const res = await axios.get('http://localhost:5000/api/apiKeyRelay');
           setKeys(res.data);
-          console.log(keys)
         } catch (err) {
           console.error(err);
         }
@@ -18,7 +17,7 @@ function Loader() {
     useEffect(() => {
         getVariables();
     }, []);
-    console.log(keys);
+
     return(
         <App
           authDomainURL={keys.authDomainURL}

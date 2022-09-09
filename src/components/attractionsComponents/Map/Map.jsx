@@ -2,6 +2,7 @@ import GoogleMapReact from 'google-map-react'
 import { Paper, Typography, useMediaQuery } from '@material-ui/core'
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined'
 import Rating from '@material-ui/lab/Rating'
+import PropTypes from 'prop-types';
 
 import useStyles from './styles'
 
@@ -15,10 +16,16 @@ const Map = ({
   const classes = useStyles()
   const isDesktop = useMediaQuery('(min-width:600px)')
 
+  console.log(setCoordinates);
+  console.log(setBounds);
+  console.log(coordinates);
+  console.log(places);
+  console.log(setChildClicked);
+
   return (
     <div className={classes.mapContainer}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: 'AIzaSyDQ6qDdLafhzvRg0p_67OxyYAWIPC9fyhU' }} //key
+        bootstrapURLKeys={{ key: 'AIzaSyDQ6qDdLafhzvRg0p_67OxyYAWIPC9fyhU' }}
         defaultCenter={coordinates}
         center={coordinates}
         defaultZoom={15}
@@ -67,5 +74,13 @@ const Map = ({
     </div>
   )
 }
+
+Map.propTypes = {
+  setCoordinates: PropTypes.func.isRequired,
+  setBounds: PropTypes.func.isRequired,
+  coordinates: PropTypes.object.isRequired,
+  places: PropTypes.array,
+  setChildClicked: PropTypes.func.isRequired,
+};
 
 export default Map
