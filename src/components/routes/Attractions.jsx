@@ -5,8 +5,8 @@ import { getPlacesData } from '../../tomsAPI'
 import Header from '../navigation/header/Header'
 import Footer from '../navigation/footer/Footer'
 
-import List from '../attractionsComponents/List/List'
-import Map from '../attractionsComponents/Map/Map'
+import List from '../attractionsComponents/list/List'
+import Map from '../attractionsComponents/map/Map'
 
 const Attractions = () => {
   const [places, setPlaces] = useState([])
