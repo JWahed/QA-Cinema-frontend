@@ -1,13 +1,13 @@
-import Navigation from "../NavBar/NavigationBar";
-import SearchBar from "../SearchBar/SearchBar";
+import Navigation from '../navBar/NavigationBar'
+import SearchBar from '../searchBar/SearchBar'
 
 function Header() {
-    return (
-        <header >
-            <Navigation />
-            <SearchBar />
-        </header>
-    );
+  return (
+    <header>
+      <Navigation />
+      <SearchBar />
+    </header>
+  )
 }
 
-export default Header;
+export default Header
