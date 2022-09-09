@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../listings/MovieListing.css"
-import Header from "../navigation/header/Header";
-import Footer from "../navigation/footer/Footer";
+import Header from "../Navigation/header/Header";
+import Footer from "../Navigation/footer/Footer";
 import axios from "axios";
 
 const setRatingClass = (rating) => {

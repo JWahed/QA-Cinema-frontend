@@ -4,8 +4,8 @@ import Create from "../discussionComponents/createTopic";
 import BoardContainer from "../discussionComponents/boardContainer";
 import CreateComment from "../discussionComponents/createComment";
 import Discussion from "../discussionComponents/discussion";
-import Header from "../navigation/header/Header";
-import Footer from "../navigation/footer/Footer";
+import Header from "../Navigation/header/Header";
+import Footer from "../Navigation/footer/Footer";
 import CommentDetails from "../discussionComponents/comments";
 
 function DiscussionBoard() {

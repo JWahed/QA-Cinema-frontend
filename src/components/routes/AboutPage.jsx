@@ -1,5 +1,5 @@
-import Header from "../navigation/header/Header";
-import Footer from "../navigation/footer/Footer";
+import Header from "../Navigation/header/Header";
+import Footer from "../Navigation/footer/Footer";
 import About from "../about/About";
 import '../about/About.css'
 
