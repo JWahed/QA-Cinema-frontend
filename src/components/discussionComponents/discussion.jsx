@@ -3,7 +3,11 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import CreateComment from "./createComment";
 import Comments from "./comments";
+<<<<<<< Updated upstream
 import NavBar from "./discussionNavBar";
+=======
+import NavBar from "./navBar";
+>>>>>>> Stashed changes
 
 const discussion = () => {
   const navigate = useNavigate();

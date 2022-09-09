@@ -1,9 +1,16 @@
 import useFetch from "./useFetch";
 import BoardDetails from "./boardDetails";
+<<<<<<< Updated upstream
 import NavBar from "./discussionNavBar";
 import "./discussionBoard.css";
 
 const BoardContainer = () => {
+=======
+import NavBar from "./navBar";
+import "./DiscussionBoard.css";
+
+const Board = () => {
+>>>>>>> Stashed changes
   const {
     error,
     isPending,
@@ -11,6 +18,7 @@ const BoardContainer = () => {
   } = useFetch("http://localhost:5000/api/discussion");
 
   return (
+<<<<<<< Updated upstream
     <div>
       <div>
         <NavBar />
@@ -18,6 +26,13 @@ const BoardContainer = () => {
       <div className="top-bar">
         <br />
       </div>
+=======
+    <div className="boardBody">
+      <div>
+        <NavBar />
+      </div>
+      <div className="top-bar"></div>
+>>>>>>> Stashed changes
       <div className="main">
         <ol>
           {error && <div>{error}</div>}
@@ -29,4 +44,8 @@ const BoardContainer = () => {
   );
 };
 
+<<<<<<< Updated upstream
 export default BoardContainer;
+=======
+export default Board;
+>>>>>>> Stashed changes

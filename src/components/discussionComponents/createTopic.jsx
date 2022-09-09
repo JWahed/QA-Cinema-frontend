@@ -2,12 +2,18 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Create = () => {
+<<<<<<< Updated upstream:src/components/discussionComponents/createTopic.jsx
   //const [title, setTitle] = useState('');
   //const [timestamp, setTimestamp] = useState('');
   const [topic, setTopic] = useState("");
   const [topicAuthor, setAuthor] = useState("");
   const [comment, setComment] = useState("");
   //const [isPending, setIsPending] = useState(false);
+=======
+  const [topic, setTopic] = useState("");
+  const [topicAuthor, setAuthor] = useState("");
+  const [comment, setComment] = useState("");
+>>>>>>> Stashed changes:src/components/routes/create.jsx
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -20,9 +26,8 @@ const Create = () => {
       body: JSON.stringify(topics),
     }).then(() => {
       console.log(`new topic added`);
-      //setIsPending(false);
-      // navigate.go(-1);
-      navigate("/");
+
+      navigate("/DiscussionBoard");
     });
   };
 
