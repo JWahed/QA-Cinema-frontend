@@ -7,7 +7,7 @@ function Loader() {
 
     const getVariables = async () => {
         try {
-          const res = await axios.get('http://localhost:10000/keysRelay/');
+          const res = await axios.get('http://localhost:5000/api/keysRelay/');
           setKeys(res.data);
           console.log(keys)
         } catch (err) {
