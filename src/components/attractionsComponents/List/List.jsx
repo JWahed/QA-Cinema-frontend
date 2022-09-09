@@ -95,6 +95,7 @@ List.propTypes = {
   type: PropTypes.func.isRequired,
   setType: PropTypes.object.isRequired,
   rating: PropTypes.array,
+  setRating: PropTypes.func.isRequired,
   childClicked: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.iseRequired,
 }
