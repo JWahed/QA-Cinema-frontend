@@ -11,8 +11,6 @@ function Contact() {
       <br />
       <br />
       <h1>Contact</h1>
-      <br />
-      <br />
       <ContactInfo />
       <ContactForm />
       <Footer />

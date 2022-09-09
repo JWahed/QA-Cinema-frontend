@@ -42,6 +42,10 @@
   align-items: center;
 }
 
+.contact-in {
+  color: #00404f;
+}
+
 .contact {
   background-color: #00404f;
   width: 80%;
