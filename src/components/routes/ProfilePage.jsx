@@ -1,6 +1,6 @@
-import Header from "../Navigation/Header/Header";
-import Footer from '../Navigation/Footer/Footer';
-import Profile from "../Authentication/Profile";
+import Header from "../Navigation/header/Header";
+import Footer from '../Navigation/footer/Footer';
+import Profile from "../authentication/Profile";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 

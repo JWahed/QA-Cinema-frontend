@@ -1,6 +1,6 @@
 import '../contactComponents/contact.css'
-import Header from '../Navigation/Header/Header'
-import Footer from '../Navigation/Footer/Footer'
+import Header from '../Navigation/header/Header'
+import Footer from '../Navigation/footer/Footer'
 import ContactForm from '../contactComponents/ContactForm'
 import ContactInfo from '../contactComponents/ContactInfo'
 
