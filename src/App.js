@@ -30,7 +30,7 @@ function App() {
           <Route path='/NewReleaseList/:_id' element={<MovieDetails />} />
           <Route path='/screens' element={<ScreensPage />} />
           <Route path='/Classification' element={<ClassificationPage />} />
-          <Route path='/DiscussionBoard' element={<DiscussionBoard />} />
+          <Route path='/DiscussionBoard/*' element={<DiscussionBoard />} />
         </Routes>
       </BrowserRouter>
     </div>

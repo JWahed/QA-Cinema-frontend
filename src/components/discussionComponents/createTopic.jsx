@@ -4,15 +4,15 @@ import { useNavigate } from "react-router-dom";
 const Create = () => {
   //const [title, setTitle] = useState('');
   //const [timestamp, setTimestamp] = useState('');
-  const [topic, setTopic] = useState('');
-  const [topicAuthor, setAuthor] = useState('');
-  const [comment, setComment] = useState('');
+  const [topic, setTopic] = useState("");
+  const [topicAuthor, setAuthor] = useState("");
+  const [comment, setComment] = useState("");
   //const [isPending, setIsPending] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const topics = {  topic, topicAuthor, comment };
+    const topics = { topic, topicAuthor, comment };
 
     fetch("http://localhost:5000/api/discussion/post", {
       method: "POST",
@@ -30,15 +30,14 @@ const Create = () => {
     <div className="create">
       <h2>Add New Topic</h2>
       <form onSubmit={handleSubmit}>
-
-      <label>Topic:</label>
+        <label>Topic:</label>
         <input
           type="text"
           required
           value={topic}
           onChange={(e) => setTopic(e.target.value)}
         />
-        
+
         <label>Topic author:</label>
         <input
           type="text"
