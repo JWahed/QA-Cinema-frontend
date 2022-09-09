@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../Listings/MovieListing.css"
-import MovieList from "../Listings/MovieList";
-import Filter from "../Listings/MovieFilter";
+import "../listings/MovieListing.css"
+import MovieList from "../listings/MovieList";
+import Filter from "../listings/MovieFilter";
 import Header from "../Navigation/Header/Header";
 import Footer from "../Navigation/Footer/Footer";
 import axios from "axios";

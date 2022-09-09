@@ -15,7 +15,7 @@ const MovieList = (props) => {
     return(
         <>
             {props.filtered.map((movie) => (
-            <Link to={`/CurrentMovieList/${movie._id}`}>            
+            <Link key={movie.fullTitle + movie._id} to={`/CurrentMovieList/${movie._id}`}>            
                 <div className="movie">
                     
                     <img src={movie.poster} alt='movie'/>

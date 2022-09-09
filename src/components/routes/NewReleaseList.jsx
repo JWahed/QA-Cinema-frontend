@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../Listings/MovieListing.css"
+import "../listings/MovieListing.css"
 import Header from "../Navigation/Header/Header";
 import Footer from "../Navigation/Footer/Footer";
 import axios from "axios";

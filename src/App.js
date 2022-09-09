@@ -15,6 +15,7 @@ import NewReleaseMovieRequest from "./components/routes/NewReleaseList";
 import ScreensPage from "./components/routes/ScreenPage";
 import ClassificationPage from "./components/routes/ClassificationPage";
 import Contact from "./components/routes/Contact";
+import DiscussionBoard from './components/routes/discussionBoard';
 
 import { Auth0Provider } from "@auth0/auth0-react";
 import PropTypes from "prop-types";
@@ -58,6 +59,7 @@ function App({ authDomainURL, authClientID, stripeKey }) {
             <Route path="/Screens" element={<ScreensPage />} />
             <Route path="/Classification" element={<ClassificationPage />} />
             <Route path="/Contact" element={<Contact />} />
+            <Route path='/DiscussionBoard/*' element={<DiscussionBoard />} />
           </Routes>
         </BrowserRouter>
       </Auth0Provider>

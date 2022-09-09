@@ -8,6 +8,7 @@ import logo from '../../../assets/logo.png';
 import './NavigationBar.css';
 import { useAuth0 } from '@auth0/auth0-react';
 
+
 function NavigationBar() {
 
   const { isAuthenticated } = useAuth0();
@@ -25,28 +26,34 @@ function NavigationBar() {
             <Nav.Link href="/CurrentMovieList">
               {/* Will Style the below component when have time*/}
               <span>
-                <span style={{color: "rgba(0,64,80,100)"}}>W</span>
-                <span style={{color: "rgba(0,64,80,100)"}}>H</span>
-                <span style={{color: "rgba(0,64,80,100)"}}>A</span>
-                <span style={{color: "rgba(0,64,80,100)"}}>T</span>
-                <span style={{color: "rgba(0,64,80,100)"}}>&apos;</span>
-                <span style={{color: "rgba(0,64,80,100)"}}>S&nbsp;</span>
-                <span style={{color: "rgba(0,64,80,100)"}}>O</span>
-                <span style={{color: "rgba(0,64,80,100)"}}>N</span>
+                <span style={{ color: "rgba(0,64,80,100)" }}>W</span>
+                <span style={{ color: "rgba(0,64,80,100)" }}>H</span>
+                <span style={{ color: "rgba(0,64,80,100)" }}>A</span>
+                <span style={{ color: "rgba(0,64,80,100)" }}>T</span>
+                <span style={{ color: "rgba(0,64,80,100)" }}>&apos;</span>
+                <span style={{ color: "rgba(0,64,80,100)" }}>S&nbsp;</span>
+                <span style={{ color: "rgba(0,64,80,100)" }}>O</span>
+                <span style={{ color: "rgba(0,64,80,100)" }}>N</span>
               </span>
             </Nav.Link>
             <Nav.Link href="/bookings">Bookings</Nav.Link>
             <Nav.Link href="/NewReleaseList">New releases</Nav.Link>
-            <Nav.Link href="/discussion-board">Discussion board</Nav.Link>
+            <Nav.Link href="/DiscussionBoard">Discussion board</Nav.Link>
             {isAuthenticated && <Nav.Link href="/profile">Profile</Nav.Link>}
             <Nav.Link>
               <LoginButton />
               <LogoutButton />
             </Nav.Link>
             <NavDropdown title="Information" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/opening-times">Opening hours</NavDropdown.Item>
-              <NavDropdown.Item href="/getting-here">Getting here</NavDropdown.Item>
-              <NavDropdown.Item href="/classification">Film Classifications</NavDropdown.Item>
+              <NavDropdown.Item href="/opening-times">
+                Opening hours
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/getting-here">
+                Getting here
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/classification">
+                Film Classifications
+              </NavDropdown.Item>
               <NavDropdown.Item href="/screens">Screens</NavDropdown.Item>
               <NavDropdown.Item href="/about">About</NavDropdown.Item>
               <NavDropdown.Divider />
